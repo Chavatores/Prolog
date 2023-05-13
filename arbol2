@@ -1,0 +1,66 @@
+papa('Salvador','Elizabeth').
+papa('Salvador','Yo'). % Salvador es mi papa
+papa('Anacleto','Salvador').
+papa('Juan','Anacleto').
+papa('Ramiro','Juan').
+papa('Cruz','Maria').
+papa('Vicente','Cruz').
+papa('Alberto','Carmen').
+papa('Zenaido','Rosario').
+papa('Jesus','Alicia').
+papa('Pancho','Jesus').
+papa('Alejo','Pancho').
+papa('Antonio','Victoria').
+papa('Jose','Piedad').
+papa('Agustin','Jose').
+papa('Fidencio','Martha').
+
+mama('Alicia','Salvador').
+mama('Alicia','Elizabeth').
+mama('Piedad','Alicia').
+mama('Martha','Piedad').
+mama('Mercedez','Martha').
+mama('Guadalupe','Jose').
+mama('Victoria','Jesus').
+mama('Margarita','Victoria').
+mama('Consuelo','Pancho').
+mama('Maria','Salvador').
+mama('Carmen','Maria').
+mama('Evangelina','Carmen').
+mama('Amelia','Cruz').
+mama('Rosario','Anacleto').
+mama('Juana','Rosario').
+mama('Refugio','Juan').
+
+
+mujer('Alicia').
+mujer('Piedad').
+mujer('Martha').
+mujer('Mercedez').
+mujer('Guadalupe').
+mujer('Victoria').
+mujer('Margarita').
+mujer('Consuelo').
+mujer('Maria').
+mujer('Carmen').
+mujer('Evangelina','Carmen').
+mujer('Amelia','Cruz').
+mujer('Rosario','Anacleto').
+mujer('Juana','Rosario').
+mujer('Refugio','Juan').
+
+
+
+% A es hijo de B si B es padre de A
+hijo(A,B) :- papa(B,A).
+% A es abuelo de B si A es padre de C y C es padre B
+abuelo(A,B) :- 
+   papa(A,C), 
+   papa(C,B).
+% A y B son hermanos si el padre de A es también el padre de B y si A y B no son lo mismo
+hermano(A,B) :- 
+   papa(C,A) , 
+   papa(C,B), 
+   A \== B.        
+
+

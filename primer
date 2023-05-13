@@ -1,0 +1,18 @@
+papa(homero,abuelo).
+papa(bart,homero).
+papa(lisa,homero).
+papa(maggy,homero).
+
+hombre(bart).
+hombre(homero).
+hombre(jose).
+mujer(lisa).
+mujer(maggy).
+
+abuelo(Nieto,Abue):-papa(Nieto,Papa),papa(Papa,Abue).
+hermano(Hermano,HermanoMan):-papa(Hermano,P),papa(HermanoMan,P),
+	                    hombre(HermanoMan).
+
+hermana(Hermano,HermanoA):-papa(Hermano,P),papa(HermanoA,P),
+	                    mujer(HermanoA).
+

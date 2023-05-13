@@ -1,0 +1,9 @@
+:- dynamic animal/2.
+
+animal(pia, pollo).
+animal(ladra, perro).
+animal(maulla, gato).
+animal(aulla, lobo).
+animal(relincha, caballo).
+animal(pia, pollo).
+
